@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>X-Ray Disease Prediction</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" />
+
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.css')}}" />
+
+
+	<!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css')}}" />
+
+	<!-- Font Awesome Icon -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}" />
+
+    <!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}" />
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('{{ url_for('static', filename='img/background1.jpg')}}');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="index.html">
+							<img class="logo" src="{{ url_for('static', filename='img/cirg.png')}}" alt="logo">
+							<img class="logo-alt" src="{{ url_for('static', filename='img/cirg.png')}}" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#pneumonia">Pneumonia predictor</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h1 class="white-text">Pneumonia Prediction using</h1> 
+							<h1 class="white-text">Chest X-rays </h1>
+							<p class="white-text">
+							</p>
+							<!-- <button class="main-btn" href="#pneumonia">Lets start</button> -->
+						</div>
+					</div>
+					<!-- /home content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- About -->
+	
+	<!-- Why Choose Us -->
+	<div id="pneumonia" class="section md-padding bg-grey">
+
+		<!-- Container -->
+		<div class="container" >
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- why choose us content -->
+				<div class="col-md-6">
+					<div class="section-header">
+						<h2 class="title">Pneumonia predictor</h2>
+					</div>
+					<h4>How does Pneumonia predictor work?</h4>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Upload the X-ray image  </p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Submit the image to the back-end server</p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>The trained machine learning model will process the image</p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Result will be shown in a few seconds</p>
+					</div>
+				</div>
+				<!-- /why choose us content -->
+
+				<!-- About slider -->
+				<div class="col-md-6">
+					<form id="upload-file" method="post" enctype="multipart/form-data">
+						<label for="imageUpload" class="upload-label">
+							Upload...
+						</label>
+						<input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+					</form>
+					
+					<div class="image-section" style="display:none;">
+						<div class="img-preview">
+							<div id="imagePreview">
+							</div>
+						</div>
+						<div>
+							<button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+						</div>
+					</div>
+					
+					<!-- <div class="loader" style="display:none;"></div> -->
+					
+					<h3 id="result">
+						<span> </span>
+					</h3>
+				</div>
+				<!-- /About slider -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Why Choose Us -->
+
+	<!-- Numbers -->
+	<div id="numbers" class="section sm-padding">
+
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('{{ url_for('static', filename='img/background2.jpg')}}');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<!-- <div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div> -->
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}" type="text/javascript"></script>
+
+
+</body>
+
+</html>
